@@ -1,0 +1,3 @@
+input_path=/projekte/slu/Data/Emotion/MSP-IMPROV
+output_path=/mount/arbeitsdaten/asr-2/baofg/corpus/msp.arff
+folders=session1 session2 session3 session4 session5 session6

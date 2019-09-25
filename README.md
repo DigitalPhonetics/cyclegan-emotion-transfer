@@ -3,7 +3,7 @@
 
 Tensorflow implementation of a CycleGAN-based framework to generate feature vectors via emotion style transfer.
 
-[Paper](https://www.isca-speech.org/archive/Interspeech_2019/pdfs/2293.pdf),
+Link to [Paper](https://www.isca-speech.org/archive/Interspeech_2019/pdfs/2293.pdf)
 
 
 ## Getting Started
