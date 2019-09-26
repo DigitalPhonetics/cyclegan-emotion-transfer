@@ -148,7 +148,10 @@ It will generate:
 
 <img src="images/comp_dist.png" width="834" height="300">
 
-- two different plots that present the overlap of distributions based on Fisher's discriminant ratio: <img src="images/equation.png">
+- two different plots that present the overlap of distributions based on Fisher's discriminant ratio:
+
+<img src="images/equation.png">
+
 (not included in the original paper)
 
   - a) overlap between the data distribution of different datasets
