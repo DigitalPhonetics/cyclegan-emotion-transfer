@@ -81,7 +81,7 @@ SRC = ROOT + 'cyclegan-emotion/src/'
 ### Pre-training
 
 
-* run the script 
+* For pre-training the generator pairs, run the script:
 
 ```
 python ./scripts/pretrain.py MODE [--dim_g DIM_G] [--lr LR] [--batch_size BATCH_SIZE] [--keep_prob KEEP_PROB] [--train_epochs TRAIN_EPOCHS]
@@ -107,7 +107,7 @@ Optional arguments:
 
 ### Training
 
-* run the script 
+* For training the complete CycleGAN framework and generating synthetic samples, run the following script: 
 
 ```
 python ./scripts/train.py MODE [--dim_g DIM_G] [--dim_d DIM_D] [--dim_c DIM_C] [--lr LR] [--batch_size BATCH_SIZE] [--keep_prob KEEP_PROB] [--train_epochs TRAIN_EPOCHS] [--lambda_cyc LAMBDA_CYC] [--lambda_cls LAMBDA_CLS]
@@ -134,31 +134,40 @@ Optional arguments:
 
 
 
-##  Experiments
+##  Experiments and Analysis
 
-### Exp 1: Emotion Transfer
-* run the script 
+### Exp 1: Emotion Transfer - Similarity Analysis
+* The following script computes different measures of similarity between real and synthetic feature distributions: 
 
 ```
 python ./scripts/exp1.py
 ```
-it will generate:
+It will generate:
 
-- one image that compares the mean and standard deviation of the source, target and synthetic data
+- one plot that shows the mean and standard deviation of the source, target and synthetic data
 
 <img src="images/comp_dist.png" width="834" height="300">
 
-- one image that compares the overlap between the data distribution of different datasets
+- two different plots that present the overlap of distributions based on Fisher's discriminant ratio: <img src="images/equation.png">
+(not included in the original paper)
+
+  - a) overlap between the data distribution of different datasets
 
 <img src="images/overlap_between_sets.png" width="450" height="300">
 
-- one image that compares the overlap between the data distribution of different emotions
+  - b) overlap between the data distribution of different emotions
 
 <img src="images/overlap_between_emotions.png" width="450" height="300">
 
 
 ### Exp 2: Inner-Corpus Evaluation
-* run the script 
+The script exp2.py runs 5-fold cross-validation on IEMOCAP and outputs:
+
+- a file consisting of mean and standard deviation of Unweighted Average Recall for the repeated evaluations (in *RESULTS/cls/*)
+
+- a plot that shows the average of the confusion matrices for the repeated evaluations, e.g.
+<img src="images/cm_real_sess0_cls2.png" width="300" height="300">
+
 
 ```
 python ./scripts/exp2.py SESSION_ID TRAIN_ON SYN_DATA [--dim_c DIM_C] [--lr LR] [--batch_size BATCH_SIZE] [--keep_prob KEEP_PROB] [--train_epochs TRAIN_EPOCHS] [--repeated REPEATED]
@@ -182,29 +191,20 @@ Optional arguments:
 | TRAIN_EPOCHS | int   | training epochs                             |
 | REPEATED     | int   | number of repeated times for classification |
 
-it will generate:
-
-- a file consisting of mean and standard deviation of Unweighted Average Recall for the repeated evaluations (in *RESULTS/cls/*)
-
-- one image that shows the average of the confusion matrices for the repeated evaluations, e.g.
-
-<img src="images/cm_real_sess0_cls2.png" width="300" height="300">
 
 
 ### Exp 3: Cross-Corpus Evaluation
-* run the script 
+This script runs cross-corpus evaluation (training on IEMOCAP, testing on MSP-IMPROV)
 
 ```
 python ./scripts/exp3.py TRAIN_ON SYN_DATA [--dim_c DIM_C] [--lr LR] [--batch_size BATCH_SIZE] [--keep_prob KEEP_PROB] [--train_epochs TRAIN_EPOCHS] [--repeated REPEATED] [--f_names F_NAMES] [--dev_portion DEV_PORTION]
 ```
-It has additional arguments:
+In addition to the arguments described in Exp. 2, there are the following arguments:
 
 | Name         | Type  | Description                                 |                                                                                            
 | ------------ | ----- | ------------------------------------------- | 
 | F_NAMES      | list  | names of selected features                  |
 | DEV_PORTION  | float | portion of development set                  |
-
-For explanation of the rest arguments, see Exp 2. 
 
 The outputs are similar to those in Exp 2. 
 
