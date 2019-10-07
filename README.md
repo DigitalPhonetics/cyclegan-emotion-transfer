@@ -62,7 +62,7 @@ Architecture of our model
 ROOT = <absolute_path_to_your_working_directory>
 CORPUS = <path_to_your_netcdf_corpus_directory>
 RESULTS = <path_to_your_output_directory>
-SRC = ROOT + 'cyclegan-emotion/src/'
+SRC = ROOT + <this_repo_inside_working_dir>+'/src/'
 ```
 
 * Establish the following subfolders under the directory *RESULTS* for different kinds of outputs
