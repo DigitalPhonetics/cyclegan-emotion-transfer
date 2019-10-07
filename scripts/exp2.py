@@ -142,7 +142,7 @@ if __name__ == '__main__':
                                        X_test_scaled, y_test, X_syn_scaled, 
                                        y_syn, args.train_on, title, 
                                        repeated=args.repeated, 
-                                       save_path=ROOT+'master-thesis/images/cm_'+ \
+                                       save_path=ROOT+'cyclegan-emotion-transfer/images/cm_'+ \
                                        args.train_on+'_sess'+str(i)+'_cls'+ \
                                        str(args.syn_data)+'.png')
         file.write("{}\t{}\n".format(mean_recall, std_recall))
