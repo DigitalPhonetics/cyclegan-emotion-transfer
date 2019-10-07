@@ -212,7 +212,7 @@ if __name__ == '__main__':
                                        X_test_scaled, y_test, X_syn_scaled, 
                                        y_syn, args.train_on, title, 
                                        args.repeated, X_dev_scaled, y_dev,
-                                       save_path=ROOT+'master-thesis/images/cm_'+ \
+                                       save_path=ROOT+'cyclegan-emotion-transfer/images/cm_'+ \
                                        args.train_on+'_total_cls'+ \
                                        str(args.syn_data)+'.png')
         file.write("{}\t{}\t{}\n".format(d_input, mean_recall, std_recall))
