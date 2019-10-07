@@ -10,7 +10,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 ROOT = "/mount/arbeitsdaten/asr-2/baofg/"
 CORPUS = ROOT + "corpus/"
 RESULTS = ROOT + "results/"
-SRC = ROOT + 'master-thesis/src/'
+SRC = ROOT + 'cyclegan-emotion-transfer/src/'
 
 sys.path.append(SRC)
 
