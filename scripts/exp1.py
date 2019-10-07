@@ -181,11 +181,11 @@ if __name__ == '__main__':
                           ('syn_2', y_syn_2), 
                           ('syn_3', y_syn_3)])
     emos = ['ang', 'hap', 'neu', 'sad']
-    compare_distribution(datasets, ROOT+'master-thesis/images/comp_dist.png')
+    compare_distribution(datasets, ROOT+'cyclegan-emotion-transfer/images/comp_dist.png')
     compare_overlaps_between_sets(
         datasets, emos, labels, 
-        ROOT+'master-thesis/images/overlap_between_sets.png')
+        ROOT+'cyclegan-emotion-transfer/images/overlap_between_sets.png')
     compare_overlaps_between_emotions(
         datasets, emos, labels, 
-        ROOT+'master-thesis/images/overlap_between_emotions.png')
+        ROOT+'cyclegan-emotion-transfer/images/overlap_between_emotions.png')
         
