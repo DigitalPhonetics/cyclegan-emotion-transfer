@@ -137,7 +137,7 @@ Optional arguments:
 ##  Experiments and Analysis
 
 ### Exp 1: Emotion Transfer - Similarity Analysis
-* The following script computes different measures of similarity between real and synthetic feature distributions: 
+* The following script computes different measures of similarity between real and synthetic feature distributions. By default, it requires different synthetic data sets to exist ('syn_total_5_0.h5', 'syn_total_5_1.h5', etc. where the first digit is the value of lambda_cyc, and the second lambda_cls). The script needs to be adapted accordingly, if only one synthetic dataset is present.
 
 ```
 python ./scripts/exp1.py
